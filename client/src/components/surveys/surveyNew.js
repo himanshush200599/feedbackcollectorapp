@@ -3,13 +3,13 @@
 // data using redux to surveyReview
 
 import React, { Component } from "react";
-import surveyForm from "./surveyForm";
+import SurveyForm from "./surveyForm";
 class surveyNew extends Component {
   render() {
     return (
       <div>
-        <surveyForm />
-        <p>Fro surveyNew</p>
+        <SurveyForm />
+        <p>From surveyNew</p>
       </div>
     );
   }
