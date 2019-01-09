@@ -9,7 +9,6 @@ class surveyNew extends Component {
     return (
       <div>
         <SurveyForm />
-        <p>From surveyNew</p>
       </div>
     );
   }
