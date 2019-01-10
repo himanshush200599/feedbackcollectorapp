@@ -27,5 +27,8 @@
     "path-parser": "^4.2.0",
     "sendgrid": "^5.2.3",
     "stripe": "^6.15.0"
+  },
+  "devDependencies": {
+    "har-validator": "^5.1.3"
   }
 }

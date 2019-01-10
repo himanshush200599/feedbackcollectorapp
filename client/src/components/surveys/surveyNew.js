@@ -1,16 +1,33 @@
-// this is root component for surveyRoutes
-// Here we will manage our surveyFeild and surveyForm and provide
-// data using redux to surveyReview
-
+// SurveyNew shows SurveyForm and SurveyFormReview
 import React, { Component } from "react";
+import { reduxForm } from "redux-form";
 import SurveyForm from "./surveyForm";
-class surveyNew extends Component {
-  render() {
+import SurveyFormReview from "./surveyFormReview";
+
+class SurveyNew extends Component {
+  state = { showFormReview: false };
+
+  renderContent() {
+    if (this.state.showFormReview) {
+      return (
+        <SurveyFormReview
+          onCancel={() => this.setState({ showFormReview: false })}
+        />
+      );
+    }
+
     return (
-      <div>
-        <SurveyForm />
-      </div>
+      <SurveyForm
+        onSurveySubmit={() => this.setState({ showFormReview: true })}
+      />
     );
   }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
+  }
 }
-export default surveyNew;
+
+export default reduxForm({
+  form: "surveyForm"
+})(SurveyNew);
