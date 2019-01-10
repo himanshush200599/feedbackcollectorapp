@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
 import SurveyField from "./surveyField";
+import validateEmails from "../../utils/validateEmails";
 class surveyForm extends Component {
   renderFields() {
     return (
@@ -52,6 +53,7 @@ class surveyForm extends Component {
 }
 function validate(values) {
   const errors = {};
+  errors.emails = validateEmails(values.emails || "");
   if (!values.title) {
     errors.title = "You must provide a title";
   }
